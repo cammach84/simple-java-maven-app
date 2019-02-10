@@ -46,7 +46,7 @@ pipeline {
 
         stage('Cam Mach - Final Stage') {
            steps {
-                sh 'echo "########### END OF Stage 2 ##############"'
+                sh 'echo "########### END OF SIMPLE PIPELINE ##############"'
            }
         }
     }
