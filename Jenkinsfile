@@ -37,6 +37,13 @@ pipeline {
             }
         }
 
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
+
+
         stage('Cam Mach - Final Stage') {
            steps {
                 sh 'echo "########### END OF Stage 2 ##############"'
