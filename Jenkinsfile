@@ -17,7 +17,13 @@ pipeline {
             }
         }
 
-        stage('#######Cam Mach - Second Stage#############') {
+        stage('############## Cam Mach - Second STage ##########') {
+            steps {
+                sh 'echo "Fail!"; exit 1'
+            }
+        }
+
+        stage('#######Cam Mach - Final Stage #############') {
            steps {
                 sh 'echo "########### END OF Stage 2 ##############"'
            }
