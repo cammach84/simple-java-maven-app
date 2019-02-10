@@ -39,9 +39,9 @@ pipeline {
             }
         }
 
-        stage('Cam Mach - Third Stage') {
+        stage('Deliver') {
             steps {
-                sh 'node --version'
+                sh './jenkins/scripts/deliver.sh'
             }
         }
 
