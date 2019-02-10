@@ -2,6 +2,12 @@ pipeline {
     agent {
         docker { image 'node:7-alpine' }
     }
+
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
+
     stages {
         stage('am Mach - First Stage') {
             steps {
@@ -16,6 +22,12 @@ pipeline {
 
 		        sh 'echo "Hello world from My Jenkins file! OK! OK! OK!#########"'
                 //sh 'mvn -B -DskipTests clean package'
+            }
+        }
+
+        stage ('Cam Mach - Second Stage') {
+            steps {
+                sh 'printenv'
             }
         }
 
