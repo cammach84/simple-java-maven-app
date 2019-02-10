@@ -1,7 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('#######Cam Mach - First Stage#############') { 
+        stage('am Mach - First Stage') {
             steps {
                 retry(3) {
                     sh 'echo "########### Execute Retry #########"'
@@ -17,13 +19,19 @@ pipeline {
             }
         }
 
-        stage('############## Cam Mach - Second STage ##########') {
+        stage('Cam Mach - Second STage') {
             steps {
                 sh 'echo "Fail!"; exit 1'
             }
         }
 
-        stage('#######Cam Mach - Final Stage #############') {
+        stage('Cam Mach - Third Stage') {
+            steps {
+                sh 'node --version'
+            }
+        }
+
+        stage('Cam Mach - Final Stage') {
            steps {
                 sh 'echo "########### END OF Stage 2 ##############"'
            }
