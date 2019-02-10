@@ -16,5 +16,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+	stage('#######Cam Mach - Second Stage#############') {
+	   steps {
+		sh 'echo "########### END OF Stage 2 ##############"'
+	   }
+	}
     }
 }
