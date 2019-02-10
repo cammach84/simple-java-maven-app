@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-echo "############## END OF BUILD ################"
+echo "############## FORM sayhello.sh  ################"

@@ -5,7 +5,7 @@ pipeline {
             steps {
 		retry(3) {
 			sh 'echo "########### Execute Retry #########"'
-			sh './fake-deploy.sh'
+			sh './sayhello.sh'
 		}
 
 		timeout(time: 5, unit: 'SECONDS') {
