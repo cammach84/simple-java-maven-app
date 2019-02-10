@@ -1,7 +1,9 @@
 pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
-    }
+    //agent {
+    //    docker { image 'node:7-alpine' }
+    //}
+
+    agent any
 
     environment {
         DISABLE_AUTH = 'true'
@@ -9,7 +11,7 @@ pipeline {
     }
 
     stages {
-        stage('am Mach - First Stage') {
+        stage('Cam Mach - First Stage - Build') {
             steps {
                 retry(3) {
                     sh 'echo "########### Execute Retry #########"'
@@ -21,13 +23,19 @@ pipeline {
                 }
 
 		        sh 'echo "Hello world from My Jenkins file! OK! OK! OK!#########"'
-                //sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
 
-        stage ('Cam Mach - Second Stage') {
+        stage ('Cam Mach - Second Stage - Test') {
             steps {
-                sh 'printenv'
+                sh 'mvn test'
+            }
+
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
 
