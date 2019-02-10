@@ -1,13 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
-        }
-    }
+    agent any
     stages {
-        stage('ccBuild') { 
+        stage('#######Cam Mach - ccBuild#############') { 
             steps {
+		sh 'echo "Hello world from My Jenkins file! OK! OK! OK!#########"'
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
