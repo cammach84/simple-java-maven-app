@@ -21,7 +21,8 @@ pipeline {
 
         stage('Cam Mach - Second STage') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                sh 'Hey! Second stage is not failing!'
+                //sh 'echo "Fail!"; exit 1'
             }
         }
 
