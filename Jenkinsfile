@@ -19,13 +19,6 @@ pipeline {
             }
         }
 
-        stage('Cam Mach - Second STage') {
-            steps {
-                sh 'Hey! Second stage is not failing!'
-                //sh 'echo "Fail!"; exit 1'
-            }
-        }
-
         stage('Cam Mach - Third Stage') {
             steps {
                 sh 'node --version'
