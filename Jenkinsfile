@@ -45,7 +45,7 @@ pipeline {
 
         stage('Parameters Example') {
             steps {
-                sh 'echo "Hello, ${myname}!"'
+                sh 'echo "Hello, ${params.myname}!"'
             }
         }
 
