@@ -5,6 +5,10 @@ pipeline {
 
     agent any
 
+    parameters {
+        string(name: 'myname', defaultValue: 'Tony', description: 'How should I greet the world?')
+    }
+
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
@@ -36,6 +40,12 @@ pipeline {
                 always {
                     junit 'target/surefire-reports/*.xml'
                 }
+            }
+        }
+
+        stage('Parameters Example') {
+            steps {
+                sh 'echo "Hello, ${myname}!"'
             }
         }
 
